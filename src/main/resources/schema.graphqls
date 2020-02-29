@@ -1,0 +1,18 @@
+type User {
+    id: ID!
+    name: String!
+    rating: Float
+}
+
+input InputUser {
+    name: String!
+    rating: Float
+}
+
+type Query {
+    getUserById(id: ID!): User
+}
+
+type Mutation {
+    putUser(user: InputUser): String
+}
