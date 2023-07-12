@@ -1,0 +1,19 @@
+type User @key(fields: "id") {
+    id: ID!
+    name: String!
+    rating: Float
+}
+
+input InputUser {
+    name: String!
+    rating: Float
+}
+
+type Query {
+    getUserById(id: ID!): User
+    getUserByRating(rating: Float): [User]
+}
+
+type Mutation {
+    putUser(user: InputUser): String
+}
